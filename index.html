@@ -443,6 +443,108 @@
             font-size: 0.95rem;
         }
 
+        /* Signature Haircut Section */
+        .signature-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(10, 10, 10, 0.9) 100%);
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .signature-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .signature-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .signature-content p {
+            color: var(--color-silver);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .signature-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature i {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            margin-top: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .feature span {
+            color: var(--color-white);
+            font-size: 0.95rem;
+        }
+
+        .signature-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .sig-gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s;
+        }
+
+        .sig-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sig-gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.4) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .sig-gallery-item:hover {
+            border-color: var(--color-gold);
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.25);
+        }
+
+        .sig-gallery-item:hover img {
+            transform: scale(1.12) rotate(2deg);
+        }
+
+        .sig-gallery-item:hover::after {
+            opacity: 1;
+        }
+
         /* Gallery */
         .gallery-grid {
             display: grid;
@@ -658,6 +760,10 @@
             .contact-info {
                 padding: 2.5rem;
             }
+
+            .signature-container {
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -765,6 +871,19 @@
             footer {
                 padding: 3rem 1rem 1rem;
             }
+
+            .signature-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .signature-content h3 {
+                font-size: 2rem;
+            }
+
+            .signature-gallery {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -814,6 +933,18 @@
             .contact-info p {
                 font-size: 0.9rem;
             }
+
+            .signature-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .signature-content p {
+                font-size: 0.95rem;
+            }
+
+            .feature span {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -834,6 +965,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
+            <a href="#signature">Signature Cut</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
             <a href="tel:0546689430" class="btn">Book Now</a>
@@ -913,6 +1045,55 @@
                 </div>
                 <h3>Full Package</h3>
                 <p>The complete royal experience. Everything you need for the ultimate transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Haircut -->
+    <section class="signature-section" id="signature">
+        <span class="section-label" data-aos="fade-down">Signature Service</span>
+        <h2 data-aos="fade-up">The Signature Cut Experience</h2>
+        
+        <div class="signature-container">
+            <div class="signature-content" data-aos="fade-right">
+                <h3>Crafted to Perfection</h3>
+                <p>Our Signature Haircut isn't just a haircut—it's an experience. Each cut is meticulously crafted by our master barbers with precision, attention to detail, and uncompromising standards.</p>
+                
+                <div class="signature-features">
+                    <div class="feature" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Professional fade techniques with sharp lines</span>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Customized to your face shape & style</span>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Hot towel finish for that royal touch</span>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Premium styling products included</span>
+                    </div>
+                </div>
+
+                <a href="tel:0546689430" class="btn">Book Your Signature Cut</a>
+            </div>
+
+            <div class="signature-gallery" data-aos="zoom-in" data-aos-delay="200">
+                <div class="sig-gallery-item">
+                    <img src="13088655163337247.jfif" alt="Signature Cut 1">
+                </div>
+                <div class="sig-gallery-item">
+                    <img src="335799715988948290.jfif" alt="Signature Cut 2">
+                </div>
+                <div class="sig-gallery-item">
+                    <img src="3729612269480861.jfif" alt="Signature Cut 3">
+                </div>
+                <div class="sig-gallery-item">
+                    <img src="605171268725933679.jfif" alt="Signature Cut 4">
+                </div>
             </div>
         </div>
     </section>
@@ -999,62 +1180,37 @@
         </a>
     </div>
 
-    <!-- Scroll to Top -->
+    <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- AOS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
+    
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 800,
-            easing: 'ease-in-out-cubic',
-            once: true,
-            offset: 100
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true,
         });
 
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        let isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : prefersDark;
-
-        function applyTheme() {
-            if (isDarkMode) {
-                html.style.colorScheme = 'dark';
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                html.style.colorScheme = 'light';
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        }
-
-        themeToggle.addEventListener('click', () => {
-            isDarkMode = !isDarkMode;
-            localStorage.setItem('darkMode', isDarkMode);
-            applyTheme();
-        });
-
-        applyTheme();
-
-        // Mobile Menu Toggle
+        // Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
         });
 
-        // Close menu when clicking on links
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close menu when link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
             });
         });
 
@@ -1062,7 +1218,7 @@
         const scrollTop = document.getElementById('scrollTop');
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 500) {
+            if (window.pageYOffset > 300) {
                 scrollTop.classList.add('show');
             } else {
                 scrollTop.classList.remove('show');
@@ -1076,27 +1232,10 @@
             });
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Add parallax effect to hero
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            const scrollPosition = window.pageYOffset;
-            hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        // Theme Toggle (placeholder for future theme functionality)
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            console.log('Theme toggle clicked');
         });
     </script>
 </body>
